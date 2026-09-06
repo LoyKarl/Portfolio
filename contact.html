@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karl Andrew Asoy — Contact</title>
+  <meta name="description" content="Get in touch with Karl Andrew Asoy — Game Developer and Programmer available for commissions and collaborations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="loader-inner">
+      <div class="loader-logo">KA</div>
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Background Atmosphere -->
+  <div class="bg-glow"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-circle"></div>
+
+  <!-- Navigation -->
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a href="about.html" class="nav-logo" aria-label="Home">K<span>A</span></a>
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="works.html" class="nav-link">Works</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Toggle theme"></button>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="about.html" class="mobile-menu-link">About</a>
+    <a href="works.html" class="mobile-menu-link">Works</a>
+    <a href="contact.html" class="mobile-menu-link active">Contact</a>
+  </div>
+
+  <!-- Main Content -->
+  <main class="page-content">
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+      <div class="container">
+        <span class="label">03 — GET IN TOUCH</span>
+        <h1 class="contact-hero-title">
+          LET'S<br>
+          MAKE<br>
+          SOMETHING<br>
+          <span class="gradient-text">GREAT.</span>
+        </h1>
+        <p class="body-large contact-hero-sub">Got a game idea, need a bot built, or want a custom tool? I'm always open to interesting commissions.</p>
+      </div>
+    </section>
+
+    <!-- Contact Grid -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container contact-grid">
+
+        <!-- Form -->
+        <div class="reveal">
+          <form class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">YOUR NAME</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">YOUR EMAIL</label>
+              <input type="email" id="email" name="email" placeholder="hello@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="project-type">PROJECT TYPE</label>
+              <select id="project-type" name="project-type">
+                <option value="" disabled selected>Select a project type</option>
+                <option value="game">Game Development</option>
+                <option value="bot">Bot Development</option>
+                <option value="tool">Custom Tool / Software</option>
+                <option value="mod">Mod / Plugin</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="select-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+            </div>
+            <div class="form-group">
+              <label for="message">YOUR MESSAGE</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project, what you need and your timeline..." required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn">SEND MESSAGE <span class="arrow">&rarr;</span></button>
+            </div>
+          </form>
+
+          <!-- Success Message -->
+          <div class="form-success">
+            <h2 class="form-success-title">THANK YOU.<br><span class="gradient-text">YOUR MESSAGE HAS BEEN SENT.</span></h2>
+            <p class="form-success-text">I'll get back to you within 24 hours. Let's make something cool.</p>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info reveal reveal-delay-2">
+          <div class="contact-info-item">
+            <div class="contact-info-label">EMAIL</div>
+            <div class="contact-info-value"><a href="mailto:karlandrewasoy@gmail.com">karlandrewasoy@gmail.com</a></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label">LOCATION</div>
+            <div class="contact-info-value">Antique, Philippines</div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label">AVAILABILITY</div>
+            <div class="contact-info-value">Available for commissions</div>
+          </div>
+          <div class="contact-info-item" style="border-bottom: none;">
+            <div class="contact-info-label">SOCIAL</div>
+            <div class="social-links">
+              <a href="https://github.com/LoyKarl" class="social-link" target="_blank" rel="noopener">GITHUB <span class="arrow">&nearr;</span></a>
+              <a href="https://www.facebook.com/karl.andrewasoy/" class="social-link" target="_blank" rel="noopener">FACEBOOK <span class="arrow">&nearr;</span></a>
+              <a href="https://discord.com/users/983285934449623070" class="social-link" target="_blank" rel="noopener">DISCORD <span class="arrow">&nearr;</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- Footer CTA -->
+    <section class="contact-footer-cta section">
+      <div class="container">
+        <h2 class="contact-footer-cta-title reveal">
+          GOOD GAMES<br>
+          START WITH<br>
+          A <span class="gradient-text">CONVERSATION.</span>
+        </h2>
+        <a href="mailto:karlandrewasoy@gmail.com" class="contact-email-link reveal reveal-delay-2">karlandrewasoy@gmail.com</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand-name">Karl Andrew Asoy</div>
+            <div class="footer-brand-role">Programmer & Game Developer</div>
+          </div>
+          <div class="footer-nav">
+            <a href="about.html">About</a>
+            <a href="works.html">Works</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-social">
+            <a href="#" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="#" target="_blank" rel="noopener">Itch.io ↗</a>
+            <a href="#" target="_blank" rel="noopener">Discord ↗</a>
+            <a href="#" target="_blank" rel="noopener">Twitter ↗</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copy">&copy; 2026 Karl Andrew Asoy</span>
+          <button class="footer-back-top" aria-label="Back to top">BACK TO TOP &uarr;</button>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

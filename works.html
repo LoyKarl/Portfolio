@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karl Andrew Asoy — Selected Works</title>
+  <meta name="description" content="Karl Andrew Asoy — A curated selection of game development projects, custom software and commissioned work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="loader-inner">
+      <div class="loader-logo">KA</div>
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Background Atmosphere -->
+  <div class="bg-glow"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-circle"></div>
+
+  <!-- Navigation -->
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a href="about.html" class="nav-logo" aria-label="Home">K<span>A</span></a>
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="works.html" class="nav-link active">Works</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Toggle theme"></button>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="about.html" class="mobile-menu-link">About</a>
+    <a href="works.html" class="mobile-menu-link active">Works</a>
+    <a href="contact.html" class="mobile-menu-link">Contact</a>
+  </div>
+
+  <!-- Main Content -->
+  <main class="page-content">
+
+    <!-- Works Hero -->
+    <section class="works-hero">
+      <div class="container">
+        <span class="label">02 — SELECTED WORK</span>
+        <h1 class="works-hero-title">
+          SELECTED<br><span class="gradient-text">WORKS.</span>
+        </h1>
+        <p class="body-large works-hero-sub">A selection of games, tools and software I've built from scratch.</p>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="game">Games</button>
+          <button class="filter-btn" data-filter="tool">Tools</button>
+          <button class="filter-btn" data-filter="bot">Bots</button>
+          <button class="filter-btn" data-filter="mod">Mods</button>
+          <button class="filter-btn" data-filter="commission">Commissions</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects-list">
+      <div class="container">
+
+        <!-- Project 01 — GUESSTHESONG -->
+        <article class="project-item layout-1 reveal"
+          data-category="game mobile"
+          data-overview="A music guessing game for Android"
+          data-role="Solo Developer"
+          data-timeline="Ongoing"
+          data-tools="Flutter, Dart, Spotify API"
+          data-challenge="Creating a fun and engaging music quiz game that integrates with Spotify's massive catalog while keeping the experience snappy and fair."
+          data-approach="Built a custom audio snippet player that can slice tracks at precise timestamps. Integrated Spotify's API for playlist search and playback. Designed progressively harder difficulty tiers."
+          data-solution="An Android app where users search any Spotify playlist, listen to progressively longer snippets (0.1s, 0.5s, 1s, 2s, 5s) and guess the song. Score based on how quickly you recognize it."
+          data-results="Fully functional app ready for release. Smooth Spotify integration. Addictive gameplay loop with increasing difficulty."
+          data-gallery-1="assets/guessthesong/result (1).jpg"
+          data-gallery-2="assets/guessthesong/result (2).jpg"
+          data-gallery-3="assets/guessthesong/result (3).jpg"
+          data-download="https://drive.google.com/uc?export=download&id=1XIGnQA3ptKdrdzjaMFS66OJtoze0xljM">
+
+          <div class="project-text">
+            <div class="project-meta">
+              <span class="project-meta-item">Mobile Game / Android</span>
+              <span class="project-meta-item">2026</span>
+            </div>
+            <h3 class="project-name">GUESSTHESONG</h3>
+            <p class="project-desc">An Android music guessing game that lets you search Spotify playlists and guess songs from progressively longer audio snippets.</p>
+            <span class="project-arrow">VIEW PROJECT <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <a href="#" class="btn project-download-btn" target="_blank" rel="noopener" onclick="event.stopPropagation()">DOWNLOAD <span class="arrow">&darr;</span></a>
+          </div>
+          <div class="project-image-wrap">
+            <img src="assets/guessthesong/thumbnail.jpg" alt="GUESSTHESONG — Android music guessing game" loading="lazy">
+            <div class="project-image-overlay">
+              <span>VIEW PROJECT</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Works CTA -->
+    <section class="works-cta section">
+      <div class="container">
+        <h2 class="works-cta-title reveal">
+          MORE PROJECTS<br><span class="gradient-text">COMING SOON.</span>
+        </h2>
+        <p class="body-large reveal" style="margin: 0 auto 2.5rem; text-align: center;">GOT A COMMISSION IN MIND?</p>
+        <a href="contact.html" class="btn reveal reveal-delay-2" style="display: inline-flex; margin: 0 auto;">LET'S BUILD IT <span class="arrow">&rarr;</span></a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand-name">Karl Andrew Asoy</div>
+            <div class="footer-brand-role">Programmer & Game Developer</div>
+          </div>
+          <div class="footer-nav">
+            <a href="about.html">About</a>
+            <a href="works.html">Works</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-social">
+            <a href="https://github.com/LoyKarl" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://www.facebook.com/karl.andrewasoy/" target="_blank" rel="noopener">Facebook ↗</a>
+            <a href="https://discord.com/users/983285934449623070" target="_blank" rel="noopener">Discord ↗</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copy">&copy; 2026 Karl Andrew Asoy</span>
+          <button class="footer-back-top" aria-label="Back to top">BACK TO TOP &uarr;</button>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Project Modal (outside main so position:fixed works) -->
+  <div class="project-modal" role="dialog" aria-label="Project details">
+    <button class="modal-close" aria-label="Close modal">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-content"></div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
