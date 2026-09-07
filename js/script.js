@@ -336,7 +336,6 @@
       const project = document.querySelector(`.project-item[data-slug="${hash}"]`);
       if (project) {
         project.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(() => this.open(project), 600);
       }
     },
 
