@@ -323,8 +323,10 @@
         if (!url && btn) btn.style.display = 'none';
       });
 
-      // Auto-open project from URL hash
-      this.openFromHash();
+      // Auto-open project from URL hash (defer until page loader finishes)
+      window.addEventListener('load', () => {
+        setTimeout(() => this.openFromHash(), 800);
+      });
       window.addEventListener('hashchange', () => this.openFromHash());
     },
 
