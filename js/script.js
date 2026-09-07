@@ -333,7 +333,8 @@
       if (!hash) return;
       const project = document.querySelector(`.project-item[data-slug="${hash}"]`);
       if (project) {
-        setTimeout(() => this.open(project), 300);
+        project.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => this.open(project), 600);
       }
     },
 
