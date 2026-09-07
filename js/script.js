@@ -322,6 +322,19 @@
         if (url && btn) btn.href = url;
         if (!url && btn) btn.style.display = 'none';
       });
+
+      // Auto-open project from URL hash
+      this.openFromHash();
+      window.addEventListener('hashchange', () => this.openFromHash());
+    },
+
+    openFromHash() {
+      const hash = window.location.hash.replace('#', '');
+      if (!hash) return;
+      const project = document.querySelector(`.project-item[data-slug="${hash}"]`);
+      if (project) {
+        setTimeout(() => this.open(project), 300);
+      }
     },
 
     open(projectItem) {
@@ -330,11 +343,22 @@
       this.modal.classList.add('open');
       this.modal.scrollTo(0, 0);
       document.body.style.overflow = 'hidden';
+
+      // Update URL hash
+      const slug = projectItem.getAttribute('data-slug');
+      if (slug) {
+        history.pushState(null, '', '#' + slug);
+      }
     },
 
     close() {
       this.modal.classList.remove('open');
       document.body.style.overflow = '';
+
+      // Clear hash without scrolling
+      if (window.location.hash) {
+        history.pushState(null, '', window.location.pathname);
+      }
     },
 
     extractData(projectItem) {
