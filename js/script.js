@@ -490,13 +490,13 @@
         <p class="download-modal-lead">${data.title} is currently in closed testing on Google Play for Android. Join the testers group first, then install the game from the Play Store with the same Google account.</p>
         <ol class="download-steps">
           <li>On your Android phone, sign in to Google Play with the Google account you want to use for testing.</li>
-          <li>Join the Word Duel testers group with that same account. If the group asks for approval, wait until you've been accepted.</li>
-          <li>Open the Word Duel listing on Google Play with the same account.</li>
+          <li>Join the <a href="${data.downloadGroup}" target="_blank" rel="noopener">Word Duel Testers Group</a> with that same account. If the group asks for approval, wait until you've been accepted.</li>
+          <li>Open the <a href="${data.download}" target="_blank" rel="noopener">Word Duel Listing</a> on Google Play with the same account.</li>
           <li>Tap <strong>Install</strong>. If the listing says the app isn't available, wait a few minutes for your membership to register, then reopen the link.</li>
         </ol>
         <div class="download-actions">
           ${data.downloadGroup ? `<a href="${data.downloadGroup}" class="btn btn-primary" target="_blank" rel="noopener">JOIN TESTERS GROUP <span class="arrow">↗</span></a>` : ''}
-          <a href="${data.download}" class="btn" target="_blank" rel="noopener">OPEN GOOGLE PLAY <span class="arrow">↗</span></a>
+          <a href="${data.download}" class="btn" target="_blank" rel="noopener">DOWNLOAD FROM PLAY STORE <span class="arrow">↗</span></a>
         </div>
         <p class="download-warning"><strong>Use the same Google account for every step.</strong> If you join the group with one account and open the store link with another, Google Play will show the game as unavailable.</p>
       `;
