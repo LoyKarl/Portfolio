@@ -340,6 +340,7 @@
     },
 
     open(projectItem) {
+      this.currentProjectItem = projectItem;
       const data = this.extractData(projectItem);
       this.populateModal(data);
       this.modal.classList.add('open');
@@ -380,7 +381,8 @@
         gallery: [1, 2, 3, 4, 5, 6]
           .map(n => projectItem.getAttribute(`data-gallery-${n}`))
           .filter(Boolean),
-        download: projectItem.getAttribute('data-download') || ''
+        download: projectItem.getAttribute('data-download') || '',
+        downloadGroup: projectItem.getAttribute('data-download-group') || ''
       };
     },
 
@@ -437,6 +439,79 @@
           ${galleryHTML}
         </div>
       `;
+    }
+  };
+
+  /* ===================== DOWNLOAD MODAL ===================== */
+  const DownloadModal = {
+    init() {
+      this.modal = document.querySelector('.download-modal');
+      if (!this.modal) return;
+
+      this.content = this.modal.querySelector('.download-modal-content');
+      this.closeBtn = this.modal.querySelector('.modal-close');
+      this.trigger = null;
+
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.project-download-btn, .modal-download-btn');
+        if (!btn) return;
+
+        const item = btn.closest('.project-item') || ProjectModal.currentProjectItem;
+        if (!item || !item.getAttribute('data-download-group')) return;
+
+        e.preventDefault();
+        this.open(item, btn);
+      });
+
+      if (this.closeBtn) {
+        this.closeBtn.addEventListener('click', () => this.close());
+      }
+
+      this.modal.addEventListener('click', (e) => {
+        if (e.target === this.modal) this.close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') this.close();
+      });
+    },
+
+    open(projectItem, trigger) {
+      const data = ProjectModal.extractData(projectItem);
+      this.trigger = trigger && !trigger.closest('.project-modal') ? trigger : null;
+
+      if (ProjectModal.modal && ProjectModal.modal.classList.contains('open')) {
+        ProjectModal.close();
+      }
+
+      this.content.innerHTML = `
+        <span class="label">CLOSED TESTING</span>
+        <h2 class="download-modal-title">DOWNLOAD<br><span class="gradient-text">${data.title}.</span></h2>
+        <p class="download-modal-lead">${data.title} is currently in closed testing on Google Play for Android. Join the testers group first, then install the game from the Play Store with the same Google account.</p>
+        <ol class="download-steps">
+          <li>On your Android phone, sign in to Google Play with the Google account you want to use for testing.</li>
+          <li>Join the Word Duel testers group with that same account. If the group asks for approval, wait until you've been accepted.</li>
+          <li>Open the Word Duel listing on Google Play with the same account.</li>
+          <li>Tap <strong>Install</strong>. If the listing says the app isn't available, wait a few minutes for your membership to register, then reopen the link.</li>
+        </ol>
+        <div class="download-actions">
+          ${data.downloadGroup ? `<a href="${data.downloadGroup}" class="btn btn-primary" target="_blank" rel="noopener">JOIN TESTERS GROUP <span class="arrow">↗</span></a>` : ''}
+          <a href="${data.download}" class="btn" target="_blank" rel="noopener">OPEN GOOGLE PLAY <span class="arrow">↗</span></a>
+        </div>
+        <p class="download-warning"><strong>Use the same Google account for every step.</strong> If you join the group with one account and open the store link with another, Google Play will show the game as unavailable.</p>
+      `;
+
+      this.modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      if (this.closeBtn) this.closeBtn.focus();
+    },
+
+    close() {
+      if (!this.modal.classList.contains('open')) return;
+      this.modal.classList.remove('open');
+      document.body.style.overflow = '';
+      if (this.trigger) this.trigger.focus();
+      this.trigger = null;
     }
   };
 
@@ -612,6 +687,7 @@
     MagneticButtons.init();
     ProjectFilters.init();
     ProjectModal.init();
+    DownloadModal.init();
     ContactForm.init();
     ScrollProgress.init();
     BackToTop.init();

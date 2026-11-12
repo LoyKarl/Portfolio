@@ -115,7 +115,7 @@
             <h3 class="project-name">GUESSTHESONG</h3>
             <p class="project-desc">An Android music guessing game that lets you search Spotify playlists and guess songs from progressively longer audio snippets.</p>
             <span class="project-arrow">VIEW PROJECT <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-            <a href="#" class="btn project-download-btn" target="_blank" rel="noopener" onclick="event.stopPropagation()">DOWNLOAD <span class="arrow">&darr;</span></a>
+            <a href="#" class="btn project-download-btn" target="_blank" rel="noopener">DOWNLOAD <span class="arrow">&darr;</span></a>
           </div>
           <div class="project-image-wrap">
             <img src="../assets/guessthesong/thumbnail.jpg" alt="GUESSTHESONG — Android music guessing game" loading="lazy">
@@ -137,6 +137,8 @@
           data-approach="Built the game around a single turn loop: draw from a fresh 4x4 grid, preview the exact score live, then submit before the clock expires. Tile values, length bonuses, streak multipliers and special tiles (letter x2, flat bonus, word x2) all resolve into one previewed total. Rounds can layer on modifiers — VOWELS x2, RARE x2, 4+ LETTERS ONLY, SUDDEN DEATH and DOUBLE POINTS — with a rule chip above the board always showing which rule is live. The same loop powers VS Bot, Endless, Daily Duel, LAN Duel and 2-8 player LAN Battle, while online rooms add private codes, join-by-code, quick match and host-selected Classic, Blitz and Marathon lengths."
           data-solution="A portrait-first word game for phones where players race a shrinking clock across a 4x4 grid. Five ways to play: VS Bot at three difficulties, Endless with a shrinking clock and revives, a shared Daily Duel with quests, login streaks and coins, 1v1 LAN Duel, and LAN Battle for 2-8 players over 15 rounds. Online play supports private rooms, joining by code and quick match, with Classic (10 rounds / 15s), Blitz (8 rounds / 8s) and Marathon (15 rounds / 20s). Coins unlock tile skins and board frames, and real colour emoji emotes let rivals react in the moment."
           data-results="A fast, high-contrast word game built for immediate rematches: a live score preview, a readable board at any screen size, and special rounds that stop one strategy from carrying a match. LAN and single-player modes work offline, online play needs a connection, and the 15-round Battle mode keeps a full lobby's standings visible in real time."
+          data-download="https://play.google.com/store/apps/details?id=com.twobeatstudios.wordduel"
+          data-download-group="https://groups.google.com/u/4/g/2bs-game-testers"
           data-gallery-1="../assets/Word%20Duel/01_duel_1080x1920.png"
           data-gallery-2="../assets/Word%20Duel/02_battle_1080x1920.png"
           data-gallery-3="../assets/Word%20Duel/03_emotes_1080x1920.png"
@@ -152,6 +154,8 @@
             <h3 class="project-name">WORD DUEL</h3>
             <p class="project-desc">A fast, competitive word game built for quick rematches. Draw a word from a fresh 4×4 grid before the clock runs out — longer words, rare letters and special tiles make every turn a gamble.</p>
             <span class="project-arrow">VIEW PROJECT <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            <a href="#" class="btn project-download-btn" target="_blank" rel="noopener">DOWNLOAD <span class="arrow">&darr;</span></a>
+            <span class="project-download-note">Closed testing — <a href="https://groups.google.com/u/4/g/2bs-game-testers" target="_blank" rel="noopener">join the testers group</a> first.</span>
           </div>
           <div class="project-image-wrap">
             <img src="../assets/Word%20Duel/thumbnail_1024x640.png" alt="WORD DUEL — up to 8 players, one winner" loading="lazy">
@@ -209,6 +213,14 @@
       <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div class="modal-content"></div>
+  </div>
+
+  <!-- Download Instructions Modal -->
+  <div class="download-modal" role="dialog" aria-modal="true" aria-label="How to download Word Duel">
+    <button class="modal-close" aria-label="Close download instructions">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="download-modal-content"></div>
   </div>
 
   <script src="../js/script.js"></script>
