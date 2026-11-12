@@ -373,10 +373,8 @@
         role: projectItem.getAttribute('data-role') || '',
         timeline: projectItem.getAttribute('data-timeline') || '',
         tools: projectItem.getAttribute('data-tools') || '',
-        challenge: projectItem.getAttribute('data-challenge') || '',
-        approach: projectItem.getAttribute('data-approach') || '',
-        solution: projectItem.getAttribute('data-solution') || '',
-        results: projectItem.getAttribute('data-results') || '',
+        description: projectItem.getAttribute('data-description') || '',
+        details: projectItem.getAttribute('data-details') || '',
         image: projectItem.querySelector('.project-image-wrap img')?.src || '',
         gallery: [1, 2, 3, 4, 5, 6]
           .map(n => projectItem.getAttribute(`data-gallery-${n}`))
@@ -400,9 +398,10 @@
           <img src="${data.image}" alt="${data.title}" loading="lazy">
         </div>
         <h2 class="modal-title">${data.title}</h2>
+        <p class="modal-lead">${data.overview}</p>
         <div class="modal-meta-grid">
           <div class="modal-meta-item">
-            <span class="label">OVERVIEW</span>
+            <span class="label">CATEGORY</span>
             <span class="modal-meta-value">${data.category}</span>
           </div>
           <div class="modal-meta-item">
@@ -419,22 +418,18 @@
           </div>
         </div>
         ${data.download && data.download !== '#' ? `<a href="${data.download}" class="btn modal-download-btn" target="_blank" rel="noopener" style="margin-bottom: 2rem; display: inline-flex;">DOWNLOAD <span class="arrow">&darr;</span></a>` : ''}
-        <div class="modal-section">
-          <h3 class="modal-section-title">Challenge</h3>
-          <p class="modal-section-text">${data.challenge}</p>
-        </div>
-        <div class="modal-section">
-          <h3 class="modal-section-title">Approach</h3>
-          <p class="modal-section-text">${data.approach}</p>
-        </div>
-        <div class="modal-section">
-          <h3 class="modal-section-title">Solution</h3>
-          <p class="modal-section-text">${data.solution}</p>
-        </div>
-        <div class="modal-section">
-          <h3 class="modal-section-title">Results</h3>
-          <p class="modal-section-text">${data.results}</p>
-        </div>
+        ${data.description ? `
+          <div class="modal-section">
+            <h3 class="modal-section-title">About the game</h3>
+            <p class="modal-section-text">${data.description}</p>
+          </div>
+        ` : ''}
+        ${data.details ? `
+          <div class="modal-section">
+            <h3 class="modal-section-title">Game details</h3>
+            <p class="modal-section-text">${data.details}</p>
+          </div>
+        ` : ''}
         <div class="modal-gallery">
           ${galleryHTML}
         </div>
