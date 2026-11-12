@@ -377,9 +377,9 @@
         solution: projectItem.getAttribute('data-solution') || '',
         results: projectItem.getAttribute('data-results') || '',
         image: projectItem.querySelector('.project-image-wrap img')?.src || '',
-        gallery1: projectItem.getAttribute('data-gallery-1') || '',
-        gallery2: projectItem.getAttribute('data-gallery-2') || '',
-        gallery3: projectItem.getAttribute('data-gallery-3') || '',
+        gallery: [1, 2, 3, 4, 5, 6]
+          .map(n => projectItem.getAttribute(`data-gallery-${n}`))
+          .filter(Boolean),
         download: projectItem.getAttribute('data-download') || ''
       };
     },
@@ -387,6 +387,11 @@
     populateModal(data) {
       const content = this.modal.querySelector('.modal-content');
       if (!content) return;
+
+      const gallery = data.gallery.length ? data.gallery : [data.image];
+      const galleryHTML = gallery.map(src => `
+        <div class="modal-gallery-item"><img src="${src}" alt="${data.title} screenshot" loading="lazy"></div>
+      `).join('');
 
       content.innerHTML = `
         <div class="modal-hero-image">
@@ -429,9 +434,7 @@
           <p class="modal-section-text">${data.results}</p>
         </div>
         <div class="modal-gallery">
-          <div class="modal-gallery-item"><img src="${data.gallery1 || data.image}" alt="${data.title}" loading="lazy"></div>
-          <div class="modal-gallery-item"><img src="${data.gallery2 || data.image}" alt="${data.title}" loading="lazy"></div>
-          <div class="modal-gallery-item full"><img src="${data.gallery3 || data.image}" alt="${data.title}" loading="lazy"></div>
+          ${galleryHTML}
         </div>
       `;
     }
